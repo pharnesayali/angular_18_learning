@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { AddEmpComponent } from './component/add-emp/add-emp.component';
+import { ListEmpComponent } from './component/list-emp/list-emp.component';
 
 @Component({
   selector: 'app-root',
-  // imports: [RouterOutlet],
+  imports: [AddEmpComponent, ListEmpComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
