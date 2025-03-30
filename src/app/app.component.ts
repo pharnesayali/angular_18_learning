@@ -1,10 +1,11 @@
+import { DataBindingComponent } from './component/data-binding/data-binding.component';
 import { Component, OnInit } from '@angular/core';
 import { AddEmpComponent } from './component/add-emp/add-emp.component';
 import { ListEmpComponent } from './component/list-emp/list-emp.component';
 
 @Component({
   selector: 'app-root',
-  imports: [AddEmpComponent, ListEmpComponent],
+  imports: [AddEmpComponent, ListEmpComponent, DataBindingComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

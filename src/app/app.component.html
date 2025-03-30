@@ -1,8 +1,17 @@
-<p>Sayali is {{printAge}} years old.</p>
+<div class="container-fluid">
+    <p>Sayali is {{printAge}} years old.</p>
+    <hr />
 
-<table style="width: 100%;">
-    <tr>
-        <td><app-add-emp></app-add-emp></td>
-        <td><app-list-emp></app-list-emp></td>
-    </tr>
-</table>
+    <div class="row">
+        <h3>Components load</h3>
+        <div class="col-6"><app-add-emp></app-add-emp></div>
+        <div class="col-6"><app-list-emp></app-list-emp></div>
+    </div>
+    <hr />
+
+    <div class="row">
+        <h3>Data binding</h3>
+        <div class="col-12"><app-data-binding></app-data-binding></div>
+    </div>
+    <hr />
+</div>

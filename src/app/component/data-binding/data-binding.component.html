@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-4">
+        <div class="col-12 mb-4">
+            <h5><i>one way data binding</i></h5>
+            <div>{{name}}</div>
+            <input type="text" value="{{name}}">
+            <input type="{{inputType}}">
+        </div>
+        <div class="col-12 mb-4">
+            <h5>Property binding</h5>
+            <div [class]="successClass">Success Class</div>
+            <input [type]="inputType">
+            <input type="text" [value]="name">
+        </div>
+        <div class="col-12">
+            <button class="bg bg-success text-white me-2" (click)="onClick('This is angular 18 tutorial')">Click
+                Me</button>
+            <button class="bg bg-success text-white" (click)="changeValue()">Change value</button>
+        </div>
+    </div>
+
+    <div class="col-4">
+        <h5><i>two way data binding</i></h5>
+        <div class="col-12 mb-4">
+            <input type="text" [(ngModel)]="name"> - {{name}}
+        </div>
+        <div class="col-12 mb-4">
+            <input type="checkbox" [(ngModel)]="isChecked"> - {{isChecked}}
+        </div>
+        <div class="col-12 mb-4">
+            <select [(ngModel)]="selectState">
+                <option value="">Select</option>
+                <option value="Maharashtra">Maharashtra</option>
+                <option value="Punjab">Punjab</option>
+                <option value="Goa">Goa</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="col-4">
+        <h5><i>Using Signals</i></h5>
+        <div>{{myName()}}</div>
+        <span>{{receivedName()}}</span>
+        <div class="col-12">
+            <button class="bg bg-success text-white" (click)="changeSignal()">Change signal value</button>
+        </div>
+    </div>
+</div>
