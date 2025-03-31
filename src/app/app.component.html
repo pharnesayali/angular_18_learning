@@ -1,5 +1,36 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="Add-Emp">Add Emp</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="Data-binding">Data-Binding</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="Emp-List">Emp List</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="Structural Directive">Structural Directive</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="Attribute Directive">Attribute Directive</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 <div class="container-fluid">
-    <p>Sayali is {{printAge}} years old.</p>
+    <div>
+        <router-outlet></router-outlet>
+    </div>
+    <!-- <p>Sayali is {{printAge}} years old.</p>
     <hr />
 
     <div class="row">
@@ -21,10 +52,10 @@
         </div>
     </div>
     <hr />
-    
+
     <div class="row">
         <div class="col-12">
             <app-attribute-directives></app-attribute-directives>
         </div>
-    </div>
+    </div> -->
 </div>

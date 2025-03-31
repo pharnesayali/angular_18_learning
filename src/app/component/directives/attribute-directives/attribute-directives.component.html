@@ -1,5 +1,13 @@
 <h3>Attribute-directive</h3>
-<h4>Attribute-directive - ngClass, ngStyle</h4>
+
+<div class="row mb-4">
+    <div class="col-10">
+        <h4>Attribute-directive - ngClass, ngStyle</h4>
+    </div>
+    <div class="col-2">
+        <button class="btn btn-warning" (click)="goToStructuralScreen()">Go To Structural Directive</button>
+    </div>
+</div>
 
 <div class="row mb-4">
     <div class="col-3">
@@ -25,12 +33,12 @@
 <div class="row mb-4">
 
     <div class="col-3">
-        <button class="bg-danger me-4" (click)="div1Red()">Add Red</button>
-        <button class="bg-primary" (click)="div1Blue()">Add Blue</button>
+        <button class="btn btn-danger me-4" (click)="div1Red()">Add Red</button>
+        <button class="btn btn-primary" (click)="div1Blue()">Add Blue</button>
     </div>
 
     <div class="col-3">
-        <button class="bg-secondary" (click)="div2Toggle()">Toggle</button>
+        <button class="btn btn-secondary" (click)="div2Toggle()">Toggle</button>
     </div>
     <div class="col-3">
         <input type="text" placeholder="enter value" class="me-4" [(ngModel)]="input1">

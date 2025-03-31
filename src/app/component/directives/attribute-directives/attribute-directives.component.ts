@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-attribute-directives',
@@ -23,14 +24,16 @@ export class AttributeDirectivesComponent {
     { count: '14', name: 'Rupesh', age: 50, marks: 99, status: true },
   ]
 
-cssProperty: any = {
-  'height': '5rem',
-  'width':'15rem',
-  'background':'Yellow',
-  'border-radius':'20px',
-  'border':'2px solid black',
-  'font-size': '20px',
-}
+  cssProperty: any = {
+    'height': '5rem',
+    'width': '15rem',
+    'background': 'Yellow',
+    'border-radius': '20px',
+    'border': '2px solid black',
+    'font-size': '20px',
+  }
+
+  constructor(private router: Router) { }
 
   div1Red() { this.div1Color = 'bg-danger' }
 
@@ -38,5 +41,9 @@ cssProperty: any = {
 
   div2Toggle() {
     this.div2Color = !this.div2Color;
+  }
+
+  goToStructuralScreen() {
+    this.router.navigateByUrl('/Structural Directive')
   }
 }

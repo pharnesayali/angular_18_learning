@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-structural-directive',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './structural-directive.component.html',
   styleUrl: './structural-directive.component.scss'
 })

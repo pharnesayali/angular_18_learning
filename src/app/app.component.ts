@@ -1,13 +1,9 @@
-import { DataBindingComponent } from './component/data-binding/data-binding.component';
 import { Component, OnInit } from '@angular/core';
-import { AddEmpComponent } from './component/add-emp/add-emp.component';
-import { ListEmpComponent } from './component/list-emp/list-emp.component';
-import { StructuralDirectiveComponent } from './component/directives/structural-directive/structural-directive.component';
-import { AttributeDirectivesComponent } from './component/directives/attribute-directives/attribute-directives.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [AddEmpComponent, ListEmpComponent, DataBindingComponent, StructuralDirectiveComponent, AttributeDirectivesComponent],
+  imports: [RouterModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
