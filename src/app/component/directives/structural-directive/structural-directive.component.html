@@ -1,0 +1,90 @@
+<h3>structural-directive</h3>
+<h4>structural-directive - *ngIf</h4>
+
+<div class="row mb-4">
+    <div class="col-3">
+        <div *ngIf="div1" class="mainDiv bg-success">Div1 - hide and show div</div>
+    </div>
+    <div class="col-3">
+        <div *ngIf="div2" class="mainDiv bg-danger">Div2 - hide and show div on toggle</div>
+    </div>
+    <div class="col-3">
+        <div *ngIf="input1 == input2" class="mainDiv bg-primary">Div3 - If both inputs have same value then only show
+            div</div>
+    </div>
+    <div class="col-3">
+        <div *ngIf="checkboxValue || checkOption == 'Pune'" class="mainDiv bg-secondary">Div4 - If checkbox is checked
+            then div show. and option is selected then div show.</div>
+    </div>
+</div>
+
+<div class="row mb-4">
+
+    <div class="col-3">
+        <button class="bg-danger me-4" (click)="div1Hide()">Hide</button>
+        <button class="bg-success" (click)="div1Show()">Show</button>
+    </div>
+
+    <div class="col-3">
+        <button class="bg-secondary" (click)="div2Toggle()">Toggle</button>
+    </div>
+    <div class="col-3">
+        <input type="text" placeholder="enter value" class="me-4" [(ngModel)]="input1">
+        <input type="text" placeholder="enter value" [(ngModel)]="input2">
+    </div>
+
+    <div class="col-3">
+        <input type="checkbox" class="ms-4 me-4" [(ngModel)]="checkboxValue">
+
+        <select [(ngModel)]="checkOption">
+            <option value="">Select</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Pune">Pune</option>
+            <option value="Kolhapur">Kolhapur</option>
+        </select>
+    </div>
+</div>
+
+<h4>structural-directive - *ngFor</h4>
+
+<div class="row">
+    <div class="col-3">
+        <ul>
+            <li *ngFor="let city of cityArray">{{city}}</li>
+        </ul>
+    </div>
+    <div class="col-3">
+        <div *ngFor="let city of cityArray">{{city}}</div>
+    </div>
+    <div class="col-3">
+        <select name="" id="">
+            <option value="" *ngFor="let city of cityArray">{{city}}</option>
+        </select>
+    </div>
+    <div class="col-3">
+        <select name="" id="">
+            <option *ngFor="let student of studentList" [value]="student?.count"> {{student?.name}}</option>
+        </select>
+    </div>
+    <table style="width: 100%;">
+        <thead>
+            <tr>
+                <th>Sr.No</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of studentList; let srNo = index">
+                <td>{{srNo +1}}</td>
+                <td>{{student?.name}}</td>
+                <td>{{student?.age}}</td>
+                <td>
+                    <span *ngIf="student?.status">Married</span>
+                    <span *ngIf="!student?.status">Single</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

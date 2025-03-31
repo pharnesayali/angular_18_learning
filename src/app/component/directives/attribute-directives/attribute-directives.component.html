@@ -1,0 +1,88 @@
+<h3>Attribute-directive</h3>
+<h4>Attribute-directive - ngClass, ngStyle</h4>
+
+<div class="row mb-4">
+    <div class="col-3">
+        <div class="mainDiv" [ngClass]="div1Color">Div1 - add color to div as per button click</div>
+    </div>
+    <div class="col-3">
+        <div class="mainDiv" [ngClass]="div2Color ? 'bg-success': 'bg-danger'">Div2 - toggle color of div on toggle
+        </div>
+    </div>
+    <div class="col-3">
+        <div class="mainDiv bg-primary" [ngClass]="input1 == input2 ? 'bg-secondary':'bg-danger'">Div3 - If both inputs
+            have same value then show primary color otherwise
+            different color</div>
+    </div>
+    <div class="col-3">
+        <div class="mainDiv"
+            [ngClass]="checkboxValue ? 'bg-success' : (checkOption == 'Mumbai' ? 'bg-primary' : 'bg-danger')">Div4 - If
+            checkbox is checked then div get one type color. and option is
+            selected then div color.</div>
+    </div>
+</div>
+
+<div class="row mb-4">
+
+    <div class="col-3">
+        <button class="bg-danger me-4" (click)="div1Red()">Add Red</button>
+        <button class="bg-primary" (click)="div1Blue()">Add Blue</button>
+    </div>
+
+    <div class="col-3">
+        <button class="bg-secondary" (click)="div2Toggle()">Toggle</button>
+    </div>
+    <div class="col-3">
+        <input type="text" placeholder="enter value" class="me-4" [(ngModel)]="input1">
+        <input type="text" placeholder="enter value" [(ngModel)]="input2">
+    </div>
+
+    <div class="col-3">
+        <input type="checkbox" class="ms-4 me-4" [(ngModel)]="checkboxValue">
+
+        <select [(ngModel)]="checkOption">
+            <option value="">Select</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Pune">Pune</option>
+            <option value="Kolhapur">Kolhapur</option>
+        </select>
+    </div>
+</div>
+
+<h4>structural-directive - *ngFor</h4>
+
+<div class="row">
+    <table style="width: 50%;">
+        <thead>
+            <tr>
+                <th>Sr.No</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Marks</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of studentList; let srNo = index">
+                <td>{{srNo +1}}</td>
+                <td>{{student?.name}}</td>
+                <td>{{student?.age}}</td>
+                <td>
+                    <div class="progress" role="progressbar" aria-label="Basic example" aria-valuenow="25"
+                        aria-valuemin="0" aria-valuemax="100">
+                        <div class="progress-bar" [ngStyle]="{width: student?.marks + '%'}">{{student?.marks + '%'}}
+                        </div>
+                    </div>
+                </td>
+                <td [ngStyle]="{background: student?.status ? 'Red':'Green'}">
+                    <span *ngIf="student?.status">Married</span>
+                    <span *ngIf="!student?.status">Single</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div [ngStyle]="cssProperty" class="ms-4">
+        Direct custom css bind to html element.
+    </div>
+</div>

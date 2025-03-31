@@ -1,4 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
 .text-color {
   background-color: rosybrown;
-};
+}
+
+.mainDiv {
+  height: 4rem;
+}
+
+table,
+th,
+td {
+  border: 1px solid black; /* Adds a border to table, headers, and cells */
+}
+
+th,
+td {
+  padding: 8px; /* Adds some spacing inside cells */
+  text-align: left; /* Aligns text to the left */
+}
